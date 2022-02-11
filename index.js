@@ -55,8 +55,8 @@ if (!options.dir) {
   return
 }
 
-fs.mkdirSync("l18n/locales/kr", { recursive: true })
-fs.mkdirSync("l18n/locales/en", { recursive: true })
+fs.mkdirSync("i18n/locales/kr", { recursive: true })
+fs.mkdirSync("i18n/locales/en", { recursive: true })
 
 const jsons = []
 
@@ -67,6 +67,6 @@ fs.readdirSync(options.dir).forEach((filePath) => {
 
 if (jsons.length > 0) {
   const { kr, en } = merge(jsons)
-  fs.writeFileSync("l18n/locales/kr/translation.json", JSON.stringify(kr))
-  fs.writeFileSync("l18n/locales/en/translation.json", JSON.stringify(en))
+  fs.writeFileSync("i18n/locales/kr/translation.json", JSON.stringify(kr))
+  fs.writeFileSync("i18n/locales/en/translation.json", JSON.stringify(en))
 }
